@@ -20,6 +20,7 @@ function Popular() {
       }).then(res => {
         localStorage.setItem("popular", JSON.stringify(res.data.recipes));
         setPopularRecipes(res.data.recipes);
+        console.log(res.data.recipes)
       })
     }
   }, []);
@@ -28,7 +29,7 @@ function Popular() {
     <Wrapper>
       <h3>Popular Picks</h3>
       <Splide options={{
-        perPage: 4,
+        perPage: 3,
         arrows: false,
         pagination: false,
         drag: "free",
