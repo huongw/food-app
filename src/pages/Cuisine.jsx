@@ -8,13 +8,13 @@ function Cuisine() {
   const [cuisine, setCuisine] = useState([])
   let params = useParams();
 
-  // useEffect(() => {
-  //   axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${params.type}`, {
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   }).then(res => console.log(res.data.results))
-  // }, [params.type])
+  useEffect(() => {
+    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${params.type}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => console.log(res.data.results))
+  }, [params.type])
 
   return (
     <Grid>
