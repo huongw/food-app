@@ -13,7 +13,7 @@ function Cuisine() {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then(res => console.log(res.data.results))
+    }).then(res => setCuisine(res.data.results))
   }, [params.type])
 
   return (
